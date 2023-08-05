@@ -30,7 +30,7 @@ const Navbar = ({ isPro }: NavbarProps) => {
       }
     >
       <div className={'flex items-center'}>
-        <MobileSidebar />
+        <MobileSidebar isPro={isPro}/>
         <Link href={'/'}>
           <h1
             className={cn(
