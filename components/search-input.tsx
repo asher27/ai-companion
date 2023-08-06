@@ -7,6 +7,8 @@ import { useDebounce } from '@/hooks/use-debounce';
 import qs from 'query-string';
 
 const SearchInput = () => {
+
+
   const router = useRouter();
   const searchParams = useSearchParams();
 

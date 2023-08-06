@@ -42,9 +42,9 @@ const ChatMessages = ({ isLoading, companion, messages = [] }: ChatMessagesProps
         content={`Hello, I am ${companion.name}, ${companion.description}`}
         src={companion.src}
       />
-      {messages.map((message) => (
+      {messages.map((message, index) => (
         <ChatMessage
-          key={message.content}
+          key={index}
           role={message.role}
           content={message.content}
           src={companion.src}
