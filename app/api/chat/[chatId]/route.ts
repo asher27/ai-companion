@@ -106,6 +106,7 @@ export async function POST(request: Request, { params }: { params: { chatId: str
 
     const cleaned = resp.replaceAll(',', '');
     const chunks = cleaned.split('\n');
+    // const response = chunks[0];
     const response = chunks[0];
 
 
