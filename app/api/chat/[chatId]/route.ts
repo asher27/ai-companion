@@ -106,23 +106,16 @@ export async function POST(request: Request, { params }: { params: { chatId: str
 
     const cleaned = resp.replaceAll(',', '');
     const chunks = cleaned.split('\n');
-    // const response = chunks[0];
     const response = chunks[0];
 
-
-
-    // await memoryManager.writeToHistory('' + response.trim(), companionKey);
+    await memoryManager.writeToHistory('' + response.trim(), companionKey);
     var Readable = require('stream').Readable;
 
     let s = new Readable();
     s.push(response);
     s.push(null);
     if (response !== undefined && response.length > 1) {
-
-
-
-
-      await memoryManager.writeToHistory('' + response.trim(), companionKey);
+      memoryManager.writeToHistory('' + response.trim(), companionKey);
 
       await prismadb.companion.update({
         where: {
